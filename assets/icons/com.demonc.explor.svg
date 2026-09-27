@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Filtros de sombra y profundidad -->
+    <filter id="folder-shadow" x="-10%" y="-10%" width="125%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#050811" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#050811" flood-opacity="0.25" />
+    </filter>
+
+    <filter id="front-shadow" x="-10%" y="-10%" width="120%" height="125%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="-4" stdDeviation="6" flood-color="#050811" flood-opacity="0.18" />
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#050811" flood-opacity="0.35" />
+    </filter>
+
+    <filter id="sheet-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.22" />
+    </filter>
+
+    <!-- Gradientes de la carpeta -->
+    <!-- Solapa trasera -->
+    <linearGradient id="back-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2c5d88" />
+      <stop offset="100%" stop-color="#183652" />
+    </linearGradient>
+
+    <!-- Pestaña superior -->
+    <linearGradient id="tab-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3673a5" />
+      <stop offset="100%" stop-color="#245177" />
+    </linearGradient>
+
+    <!-- Hojas de documentos interiores -->
+    <linearGradient id="sheet-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <linearGradient id="code-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <!-- Cubierta frontal principal -->
+    <linearGradient id="front-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#408ec9" />
+      <stop offset="25%" stop-color="#3179b0" />
+      <stop offset="100%" stop-color="#19476f" />
+    </linearGradient>
+
+    <!-- Brillo superior de la cubierta -->
+    <linearGradient id="highlight-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Emblema Explor (Brújula moderna) -->
+    <linearGradient id="compass-north" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0997c" />
+      <stop offset="100%" stop-color="#e06c55" />
+    </linearGradient>
+
+    <linearGradient id="compass-south" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <linearGradient id="compass-east" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <linearGradient id="compass-west" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb89e" />
+      <stop offset="100%" stop-color="#f0997c" />
+    </linearGradient>
+
+    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. SOLAPA TRASERA Y PESTAÑA -->
+  <g filter="url(#folder-shadow)">
+    <!-- Cuerpo trasero con pestaña -->
+    <path d="M 64 124 C 64 102 78 88 100 88 L 192 88 C 210 88 226 98 238 114 L 256 138 C 264 148 274 152 288 152 L 412 152 C 434 152 448 166 448 188 L 448 404 C 448 426 434 440 412 440 L 100 440 C 78 440 64 426 64 404 Z"
+          fill="url(#back-grad)" />
+    
+    <!-- Relieve de la pestaña trasera -->
+    <path d="M 64 124 C 64 102 78 88 100 88 L 192 88 C 210 88 226 98 238 114 L 256 138 C 264 148 274 152 288 152 L 412 152 C 434 152 448 166 448 188"
+          fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" />
+  </g>
+
+  <!-- 2. DOCUMENTOS INTERIORES QUE ASOMAN -->
+  <!-- Hoja trasera secundaria -->
+  <g filter="url(#sheet-shadow)">
+    <rect x="140" y="112" width="232" height="180" rx="14"
+          transform="rotate(4, 256, 202)"
+          fill="#dbeafe" opacity="0.8" />
+  </g>
+
+  <!-- Hoja frontal con detalles de código / archivos -->
+  <g filter="url(#sheet-shadow)">
+    <rect x="120" y="118" width="248" height="190" rx="12" fill="url(#sheet-grad)" />
+    
+    <!-- Mini encabezado de archivo -->
+    <rect x="144" y="140" width="80" height="10" rx="5" fill="url(#code-grad)" />
+    <circle cx="340" cy="145" r="4" fill="#94a3b8" />
+    <circle cx="324" cy="145" r="4" fill="#cbd5e1" />
+    
+    <!-- Líneas de datos simuladas -->
+    <rect x="144" y="162" width="180" height="6" rx="3" fill="#cbd5e1" opacity="0.8" />
+    <rect x="144" y="176" width="140" height="6" rx="3" fill="#e2e8f0" />
+    <rect x="144" y="190" width="160" height="6" rx="3" fill="#e2e8f0" />
+  </g>
+
+  <!-- 3. CUBIERTA FRONTAL DE LA CARPETA -->
+  <g filter="url(#front-shadow)">
+    <!-- Forma envolvente frontal de la carpeta -->
+    <path d="M 52 216 C 52 194 68 182 88 182 L 424 182 C 444 182 460 194 460 216 L 460 412 C 460 434 444 448 424 448 L 88 448 C 68 448 52 434 52 412 Z"
+          fill="url(#front-grad)" />
+
+    <!-- Borde biselado superior con brillo suave -->
+    <path d="M 54 216 C 54 195 69 184 88 184 L 424 184 C 443 184 458 195 458 216"
+          fill="none" stroke="url(#highlight-grad)" stroke-width="2.5" />
+
+    <!-- Iluminación curva interior sutil -->
+    <path d="M 52 216 C 52 194 68 182 88 182 L 424 182 C 444 182 460 194 460 216 L 460 260 C 380 230 130 230 52 260 Z"
+          fill="#ffffff" opacity="0.07" />
+  </g>
+
+  <!-- 4. EMBLEMA MODERNO DE EXPLORACIÓN (BRÚJULA / COMPASS) -->
+  <g transform="translate(256, 316)">
+    <!-- Círculo exterior translúcido con borde -->
+    <circle cx="0" cy="0" r="54" fill="url(#ring-grad)" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
+    
+    <!-- Marcas cardinales minimalistas -->
+    <circle cx="0" cy="-44" r="2.5" fill="#f0997c" />
+    <circle cx="44" cy="0" r="2" fill="rgba(255,255,255,0.6)" />
+    <circle cx="0" cy="44" r="2" fill="rgba(255,255,255,0.6)" />
+    <circle cx="-44" cy="0" r="2" fill="rgba(255,255,255,0.6)" />
+
+    <!-- Estrella brújula facetada 3D -->
+    <!-- Aguja Norte (Color acento Sunset / Coral) -->
+    <polygon points="0,0 -12,-10 0,-40" fill="url(#compass-north)" />
+    <polygon points="0,0 12,-10 0,-40" fill="url(#compass-west)" />
+
+    <!-- Aguja Sur (Blanco plata) -->
+    <polygon points="0,0 -12,10 0,40" fill="url(#compass-east)" />
+    <polygon points="0,0 12,10 0,40" fill="url(#compass-south)" />
+
+    <!-- Aguja Este -->
+    <polygon points="0,0 10,-12 40,0" fill="url(#compass-south)" />
+    <polygon points="0,0 10,12 40,0" fill="url(#compass-east)" />
+
+    <!-- Aguja Oeste -->
+    <polygon points="0,0 -10,-12 -40,0" fill="url(#compass-west)" />
+    <polygon points="0,0 -10,12 -40,0" fill="url(#compass-north)" />
+
+    <!-- Núcleo central -->
+    <circle cx="0" cy="0" r="8" fill="#1e293b" />
+    <circle cx="0" cy="0" r="5" fill="#f0997c" />
+    <circle cx="-1.5" cy="-1.5" r="2" fill="#ffffff" opacity="0.8" />
+  </g>
+</svg>

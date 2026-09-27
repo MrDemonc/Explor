@@ -1,0 +1,518 @@
+/* Explor - Estilo Moderno, Redondeado y Dinámico */
+
+window {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+/* Lista principal de archivos */
+.file-list {
+    background-color: transparent;
+    border: none;
+    padding: 6px;
+}
+
+.file-list row {
+    border-radius: 12px;
+    margin: 2px 8px;
+    padding: 6px 10px;
+    transition: background-color 160ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 160ms ease;
+    border: 1px solid transparent;
+}
+
+.file-list row:hover {
+    background-color: alpha(@foreground, 0.06);
+}
+
+.file-list row:selected {
+    background-color: alpha(@accent_color, 0.22);
+    color: @accent_color;
+    border: 1px solid alpha(@accent_color, 0.35);
+}
+
+.file-list row:selected label {
+    color: @accent_color;
+}
+
+.folder-name {
+    font-weight: 700;
+}
+
+.file-title {
+    font-weight: 700;
+}
+
+.file-size {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Barra lateral / Sidebar */
+.sidebar {
+    background-color: alpha(@window_bg_color, 0.95);
+    border-right: 1px solid alpha(@foreground, 0.08);
+}
+
+.sidebar row {
+    border-radius: 8px;
+    margin: 1px 3px;
+    padding: 3px 6px;
+    min-height: 28px;
+    transition: background-color 150ms ease;
+}
+
+.sidebar row label {
+    font-size: 0.9rem;
+}
+
+.sidebar row:hover {
+    background-color: alpha(@foreground, 0.07);
+}
+
+.sidebar row:active {
+    background-color: alpha(@accent_color, 0.15);
+}
+
+.sidebar row:focus {
+    background-color: alpha(@foreground, 0.08);
+    outline: none;
+}
+
+/* Reordenamiento de marcadores en la barra lateral */
+.sidebar row.reorder-drop-top {
+    border-top: 2px solid @accent_color;
+    background-color: alpha(@accent_color, 0.12);
+}
+
+.sidebar row.reorder-drop-bottom {
+    border-bottom: 2px solid @accent_color;
+    background-color: alpha(@accent_color, 0.12);
+}
+
+.sidebar row.reorder-dragging {
+    opacity: 0.45;
+}
+
+/* Tarjeta de espacio en disco en la barra lateral */
+.sidebar-disk-card {
+    border-radius: 8px;
+    background-color: alpha(@foreground, 0.05);
+    border: 1px solid alpha(@foreground, 0.08);
+    padding: 4px 6px;
+    margin-top: 4px;
+    transition: background-color 150ms ease;
+}
+
+.sidebar-disk-card:hover {
+    background-color: alpha(@foreground, 0.08);
+}
+
+.disk-progress progress {
+    background-color: @accent_color;
+    border-radius: 4px;
+    min-height: 4px;
+}
+
+.disk-progress trough {
+    background-color: alpha(@foreground, 0.12);
+    border-radius: 4px;
+    min-height: 4px;
+}
+
+/* Panel lateral de vista previa */
+.preview-pane {
+    background-color: alpha(@window_bg_color, 0.97);
+    border-left: 1px solid alpha(@foreground, 0.08);
+}
+
+.preview-meta-card {
+    padding: 14px;
+    border-radius: 16px;
+    background-color: alpha(@foreground, 0.04);
+    border: 1px solid alpha(@foreground, 0.07);
+}
+
+.preview-text-view {
+    background-color: alpha(@background, 0.6);
+    font-family: monospace;
+    font-size: 0.88rem;
+    border-radius: 12px;
+    color: @foreground;
+}
+
+.preview-scroll {
+    border-radius: 14px;
+    border: 1px solid alpha(@foreground, 0.08);
+}
+
+.preview-picture {
+    border-radius: 14px;
+}
+
+/* Paleta de comandos */
+.command-palette-window {
+    background-color: transparent;
+}
+
+.command-palette-card {
+    border-radius: 22px;
+    background-color: alpha(@window_bg_color, 0.96);
+    border: 1px solid alpha(@accent_color, 0.28);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6);
+    padding: 12px;
+}
+
+.command-palette-entry {
+    font-size: 1.05rem;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    background-color: alpha(@foreground, 0.06);
+}
+
+/* Barra de ruta (Headerbar) */
+.path-pill {
+    padding: 2px 4px 2px 10px;
+    border-radius: 18px;
+    background-color: alpha(@foreground, 0.07);
+    border: 1px solid alpha(@foreground, 0.1);
+    transition: background-color 150ms ease, border-color 150ms ease;
+}
+
+.path-pill:hover {
+    background-color: alpha(@foreground, 0.10);
+    border-color: alpha(@accent_color, 0.3);
+}
+
+.path-btn-inner {
+    padding: 2px 4px;
+    border-radius: 10px;
+    color: @foreground;
+    font-weight: 600;
+    font-size: 0.86rem;
+}
+
+.path-copy-btn {
+    padding: 2px 5px;
+    border-radius: 12px;
+    opacity: 0.7;
+    transition: opacity 140ms ease, background-color 140ms ease, color 140ms ease;
+}
+
+.path-copy-btn:hover {
+    opacity: 1.0;
+    background-color: alpha(@accent_color, 0.2);
+    color: @accent_color;
+}
+
+/* BURBUJA FLOTANTE DE PESTAÑAS */
+.tabs-bubble {
+    border-radius: 24px;
+    background-color: alpha(@window_bg_color, 0.92);
+    border: 1px solid alpha(@foreground, 0.16);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    padding: 3px 6px;
+    margin-bottom: 2px;
+}
+
+.tab-wrapper {
+    border-radius: 18px;
+    padding: 1px 3px;
+    transition: background-color 150ms ease, border-color 150ms ease;
+    border: 1px solid transparent;
+}
+
+.tab-wrapper:hover {
+    background-color: alpha(@foreground, 0.08);
+}
+
+.tab-wrapper-active {
+    background-color: alpha(@accent_color, 0.22);
+    border: 1px solid alpha(@accent_color, 0.4);
+}
+
+.tab-pill-btn {
+    padding: 3px 6px;
+    border-radius: 14px;
+}
+
+.tab-pill-btn.tab-active label {
+    font-weight: 700;
+    color: @accent_color;
+}
+
+.tab-shortcut-badge {
+    font-size: 0.70rem;
+    font-weight: bold;
+    padding: 1px 4px;
+    border-radius: 6px;
+    margin-right: 2px;
+}
+
+.tab-close-btn {
+    padding: 2px 4px;
+    border-radius: 10px;
+    opacity: 0.6;
+    transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+.tab-close-btn:hover {
+    opacity: 1.0;
+    background-color: alpha(@destructive_color, 0.2);
+    color: @destructive_color;
+}
+
+.tab-add-btn {
+    padding: 4px 6px;
+    border-radius: 14px;
+    opacity: 0.8;
+}
+
+.tab-add-btn:hover {
+    opacity: 1.0;
+    background-color: alpha(@accent_color, 0.2);
+    color: @accent_color;
+}
+
+/* BURBUJA FLOTANTE DE ACCIONES INFERIOR */
+.action-bubble {
+    border-radius: 30px;
+    background-color: alpha(@window_bg_color, 0.90);
+    border: 1px solid alpha(@foreground, 0.16);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+    padding: 4px 8px;
+}
+
+.bubble-btn {
+    border-radius: 20px;
+    padding: 4px 10px;
+    color: @foreground;
+    background-color: transparent;
+    transition: background-color 140ms ease, color 140ms ease, transform 140ms ease;
+}
+
+.bubble-btn:hover {
+    background-color: alpha(@accent_color, 0.22);
+    color: @accent_color;
+}
+
+.bubble-btn.destructive-action:hover {
+    background-color: alpha(@red, 0.25);
+    color: @red;
+}
+
+.bubble-shortcut-badge {
+    background-color: alpha(@foreground, 0.12);
+    color: @foreground;
+    border-radius: 8px;
+    padding: 1px 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+/* Barra de estado */
+.status-bar {
+    border-top: 1px solid alpha(@foreground, 0.06);
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    background-color: alpha(@window_bg_color, 0.95);
+}
+
+/* Diálogos y Modales */
+window.dialog, window.background {
+    border-radius: 20px;
+}
+
+/* Barra de navegación compacta */
+.compact-navbar {
+    min-height: 32px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.compact-navbar button {
+    min-height: 26px;
+    min-width: 26px;
+    padding: 2px 4px;
+    margin: 1px;
+}
+
+.compact-navbar .path-pill {
+    padding: 1px 2px 1px 6px;
+    font-size: 0.78rem;
+    min-height: 22px;
+}
+
+.compact-navbar .path-btn-inner {
+    padding: 1px 2px;
+    font-size: 0.78rem;
+}
+
+.compact-navbar .path-copy-btn {
+    padding: 1px 3px;
+}
+
+.compact-navbar image {
+    -gtk-icon-size: 14px;
+}
+
+/* Cuadrícula de archivos (Modo Cuadrados) */
+.file-grid {
+    background-color: transparent;
+    padding: 6px;
+}
+
+flowboxchild {
+    border-radius: 10px;
+    margin: 2px;
+    padding: 2px;
+    transition: background-color 150ms ease, transform 140ms ease;
+    border: 1px solid transparent;
+}
+
+flowboxchild:hover {
+    background-color: alpha(@foreground, 0.06);
+}
+
+flowboxchild:selected {
+    background-color: alpha(@accent_color, 0.22);
+    color: @accent_color;
+    border: 1px solid alpha(@accent_color, 0.35);
+}
+
+flowboxchild:selected label {
+    color: @accent_color;
+}
+
+.file-grid-card {
+    border-radius: 8px;
+}
+
+.file-grid-name {
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.file-grid-size {
+    font-size: 0.70rem;
+    margin-top: 1px;
+}
+
+/* Estado de edición de atajos */
+button.editing-shortcut {
+    background-color: alpha(@accent_color, 0.35);
+    border: 2px solid @accent_color;
+    color: @accent_color;
+    font-weight: bold;
+}
+
+/* Barra de progreso de operaciones */
+.progress-bar-custom trough {
+    min-height: 12px;
+    border-radius: 8px;
+    background-color: alpha(@foreground, 0.1);
+}
+
+.progress-bar-custom progress {
+    min-height: 12px;
+    border-radius: 8px;
+    background-color: @accent_color;
+}
+
+.progress-bar-custom text {
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.success-icon {
+    color: @success_color;
+}
+
+.error-icon {
+    color: @destructive_color;
+}
+
+.warning-icon {
+    color: @warning_color;
+}
+
+/* Tarjeta de operación en la barra lateral */
+.sidebar-op-card {
+    background-color: alpha(@foreground, 0.04);
+    border: 1px solid alpha(@foreground, 0.08);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.sidebar-op-card:hover {
+    background-color: alpha(@foreground, 0.07);
+}
+
+.compact-btn {
+    padding: 2px 8px;
+    min-height: 24px;
+    font-size: 0.75rem;
+}
+
+.collapsed-op-btn {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    min-width: 36px;
+    min-height: 36px;
+    background-color: alpha(@accent_color, 0.15);
+    color: @accent_color;
+}
+
+.collapsed-op-btn:hover {
+    background-color: alpha(@accent_color, 0.28);
+}
+
+/* Menú Contextual Elegante y Compacto */
+.context-menu-popover contents {
+    border-radius: 10px;
+    padding: 3px;
+    box-shadow: 0 6px 20px alpha(black, 0.25);
+}
+
+.context-menu-box {
+    padding: 2px;
+    min-width: 175px;
+}
+
+.sidebar-context-menu {
+    min-width: 150px;
+}
+
+.menu-item-btn {
+    border-radius: 6px;
+    padding: 2px 6px;
+    min-height: 25px;
+    font-size: 0.82rem;
+    transition: background-color 100ms ease-in-out;
+}
+
+.menu-item-btn label {
+    font-size: 0.82rem;
+}
+
+.menu-item-btn:hover {
+    background-color: alpha(@accent_color, 0.15);
+}
+
+.menu-item-btn.destructive-action:hover {
+    background-color: alpha(@destructive_color, 0.18);
+    color: @destructive_color;
+}
+
+.menu-item-shortcut {
+    font-size: 0.70rem;
+    font-weight: 600;
+    opacity: 0.60;
+    margin-left: 12px;
+}
+
+.context-menu-separator {
+    margin: 2px 4px;
+    opacity: 0.15;
+}
+
+
+
