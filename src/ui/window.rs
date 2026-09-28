@@ -473,6 +473,64 @@ impl MainWindow {
         self.file_list.grab_focus();
     }
 
+    pub fn window(&self) -> &adw::ApplicationWindow {
+        &self.window
+    }
+
+    pub fn open_target(&self, path_or_uri: &str, select_mode: bool) {
+        let path = if path_or_uri.starts_with("file://") {
+            if let Ok((p, _)) = glib::filename_from_uri(path_or_uri) {
+                p
+            } else {
+                let stripped = &path_or_uri["file://".len()..];
+                PathBuf::from(stripped)
+            }
+        } else if let Some(stripped) = path_or_uri.strip_prefix("~/") {
+            dirs::home_dir().map(|h| h.join(stripped)).unwrap_or_else(|| PathBuf::from(path_or_uri))
+        } else {
+            let p = PathBuf::from(path_or_uri);
+            if p.is_relative() {
+                std::env::current_dir().unwrap_or_else(|_| PathBuf::from("/")).join(p)
+            } else {
+                p
+            }
+        };
+
+        let path = if let Ok(canonical) = path.canonicalize() {
+            canonical
+        } else {
+            path
+        };
+
+        if select_mode || path.is_file() {
+            let parent = path.parent().unwrap_or(&path).to_path_buf();
+            let file_name = path.file_name().map(|n| n.to_string_lossy().to_string());
+            self.navigate_to(parent, false);
+            if let Some(name) = file_name {
+                let fl = self.file_list.clone();
+                fl.select_name(&name);
+                let name_clone = name.clone();
+                glib::timeout_add_local_once(std::time::Duration::from_millis(60), move || {
+                    fl.select_name(&name_clone);
+                });
+            }
+        } else if path.is_dir() {
+            self.navigate_to(path, false);
+        } else {
+            if let Some(parent) = path.parent() {
+                if parent.is_dir() {
+                    self.navigate_to(parent.to_path_buf(), false);
+                    if let Some(name) = path.file_name().map(|n| n.to_string_lossy().to_string()) {
+                        let fl = self.file_list.clone();
+                        fl.select_name(&name);
+                    }
+                    return;
+                }
+            }
+            self.show_toast(&format!("No se encontró: {}", path.display()));
+        }
+    }
+
     fn init_signals(self: &Rc<Self>, btn_up: &Button, btn_copy_path: &Button) {
         // Conexión botón editar ruta
         let this = self.clone();

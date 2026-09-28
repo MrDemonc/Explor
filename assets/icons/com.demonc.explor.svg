@@ -52,32 +52,6 @@
       <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2" />
       <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4" />
     </linearGradient>
-
-    <!-- Emblema Explor (Brújula moderna) -->
-    <linearGradient id="compass-north" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f0997c" />
-      <stop offset="100%" stop-color="#e06c55" />
-    </linearGradient>
-
-    <linearGradient id="compass-south" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc" />
-      <stop offset="100%" stop-color="#cbd5e1" />
-    </linearGradient>
-
-    <linearGradient id="compass-east" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#e2e8f0" />
-      <stop offset="100%" stop-color="#94a3b8" />
-    </linearGradient>
-
-    <linearGradient id="compass-west" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffb89e" />
-      <stop offset="100%" stop-color="#f0997c" />
-    </linearGradient>
-
-    <linearGradient id="ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05" />
-    </linearGradient>
   </defs>
 
   <!-- 1. SOLAPA TRASERA Y PESTAÑA -->
@@ -127,39 +101,5 @@
     <!-- Iluminación curva interior sutil -->
     <path d="M 52 216 C 52 194 68 182 88 182 L 424 182 C 444 182 460 194 460 216 L 460 260 C 380 230 130 230 52 260 Z"
           fill="#ffffff" opacity="0.07" />
-  </g>
-
-  <!-- 4. EMBLEMA MODERNO DE EXPLORACIÓN (BRÚJULA / COMPASS) -->
-  <g transform="translate(256, 316)">
-    <!-- Círculo exterior translúcido con borde -->
-    <circle cx="0" cy="0" r="54" fill="url(#ring-grad)" stroke="rgba(255,255,255,0.25)" stroke-width="2" />
-    
-    <!-- Marcas cardinales minimalistas -->
-    <circle cx="0" cy="-44" r="2.5" fill="#f0997c" />
-    <circle cx="44" cy="0" r="2" fill="rgba(255,255,255,0.6)" />
-    <circle cx="0" cy="44" r="2" fill="rgba(255,255,255,0.6)" />
-    <circle cx="-44" cy="0" r="2" fill="rgba(255,255,255,0.6)" />
-
-    <!-- Estrella brújula facetada 3D -->
-    <!-- Aguja Norte (Color acento Sunset / Coral) -->
-    <polygon points="0,0 -12,-10 0,-40" fill="url(#compass-north)" />
-    <polygon points="0,0 12,-10 0,-40" fill="url(#compass-west)" />
-
-    <!-- Aguja Sur (Blanco plata) -->
-    <polygon points="0,0 -12,10 0,40" fill="url(#compass-east)" />
-    <polygon points="0,0 12,10 0,40" fill="url(#compass-south)" />
-
-    <!-- Aguja Este -->
-    <polygon points="0,0 10,-12 40,0" fill="url(#compass-south)" />
-    <polygon points="0,0 10,12 40,0" fill="url(#compass-east)" />
-
-    <!-- Aguja Oeste -->
-    <polygon points="0,0 -10,-12 -40,0" fill="url(#compass-west)" />
-    <polygon points="0,0 -10,12 -40,0" fill="url(#compass-north)" />
-
-    <!-- Núcleo central -->
-    <circle cx="0" cy="0" r="8" fill="#1e293b" />
-    <circle cx="0" cy="0" r="5" fill="#f0997c" />
-    <circle cx="-1.5" cy="-1.5" r="2" fill="#ffffff" opacity="0.8" />
   </g>
 </svg>
