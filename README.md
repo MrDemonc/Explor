@@ -1,10 +1,21 @@
-# 🚀 Explor
+<p align="center">
+  <img src="res/icon/Explor.svg" width="20%" />
+  <br><br>
+    <p align="center">
+      <img src="https://img.shields.io/badge/Explor-0.1.0-blue?style=for-the-badge&logo=rust&logoColor=white" />
+      <img src="https://img.shields.io/badge/Compatibility-Universal-green?style=for-the-badge&logo=android&logoColor=white" />
+      <img src="https://img.shields.io/badge/Rust-100%25-orange?style=for-the-badge&logo=rust&logoColor=white" />
+    </p>
+    <p align="center">
+      <b>Explor</b> is a keyboard-first file manager for Linux, written in Rust with GTK4 and Libadwaita.<br>
+      It features floating tabs, a command palette, fully remappable shortcuts, background operations with live progress, and a rounded, customizable interface tuned for Wayland.
+    </p>
+</p>
 
-A **modern**, **rounded**, **ultra-fast** file manager designed for **keyboard-first navigation**, built in **Rust** with **Libadwaita** and **GTK4**.
-
-Specially crafted for modern Wayland environments like **Hyprland** (Omarchy), Sway, GNOME, or any Wayland/X11 window manager.
-
----
+<p align="center">
+  <img src="res/screenshots/1.png" width="640">
+  <img src="res/screenshots/2.png" width="640">
+</p>
 
 ## ✨ Key Feature
 
@@ -14,7 +25,7 @@ Specially crafted for modern Wayland environments like **Hyprland** (Omarchy), S
   - **Device-Style Design (Expanded Sidebar)**: Rendered under `ACTIVE OPERATIONS`, styled after device disk usage meters with distinct task icons, numerical percentages, live speeds, and cancel (`✕`) buttons.
   - **Collapsed Sidebar Mode (Dock)**:
     - **Unified Badge Indicator**: Displays total running tasks in the compact dock icon.
-    - **Mouse Hover**: Hovering over the indicator pops open a detailed *Popover* listing all active operations with individual progress bars.
+    - **Mouse Hover**: Hovering over the indicator pops open a detailed _Popover_ listing all active operations with individual progress bars.
     - **Single-Key Toggle (<kbd>b</kbd>)**: Press <kbd>b</kbd> at any time to toggle the progress popover without touching the mouse.
   - **Independent Cancel Button**: Cancels only the specific task without interrupting others.
   - **Individual "✓ Dismiss" Button**: Upon completion, shows status and a **"✓ Dismiss"** button (or <kbd>Enter</kbd>) to clear the card.
@@ -75,76 +86,84 @@ Specially crafted for modern Wayland environments like **Hyprland** (Omarchy), S
 ## ⌨️ Keyboard Shortcuts Reference
 
 ### 📑 Tabs
-| Shortcut | Action |
-|---|---|
-| `Ctrl + T` | **Open selected folder or bookmark in new tab** |
-| `Ctrl + W` | **Close active tab** |
-| `Ctrl + 1` ... `Ctrl + 9` | **Jump directly to tab 1 to 9** |
-| `Ctrl + Tab` | **Next tab** |
-| `Ctrl + Shift + Tab` | **Previous tab** |
+
+| Shortcut                  | Action                                          |
+| ------------------------- | ----------------------------------------------- |
+| `Ctrl + T`                | **Open selected folder or bookmark in new tab** |
+| `Ctrl + W`                | **Close active tab**                            |
+| `Ctrl + 1` ... `Ctrl + 9` | **Jump directly to tab 1 to 9**                 |
+| `Ctrl + Tab`              | **Next tab**                                    |
+| `Ctrl + Shift + Tab`      | **Previous tab**                                |
 
 ### 🧭 Navigation
-| Shortcut | Action |
-|---|---|
-| `j` | Select next item |
-| `k` | Select previous item |
-| `Enter` | Open file/folder (or enter bookmark/device) |
-| `Backspace` | Go to parent directory (`..`) |
-| `←` | Focus sidebar |
-| `→` | Focus file list |
-| `g` | Go to first item |
-| `G` | Go to last item |
-| `Alt + ←` | History back |
-| `Alt + →` | History forward |
-| `Ctrl + L` | Edit path manually |
-| `Ctrl + Shift + C` | **Copy current folder path to clipboard** |
+
+| Shortcut           | Action                                      |
+| ------------------ | ------------------------------------------- |
+| `j`                | Select next item                            |
+| `k`                | Select previous item                        |
+| `Enter`            | Open file/folder (or enter bookmark/device) |
+| `Backspace`        | Go to parent directory (`..`)               |
+| `←`                | Focus sidebar                               |
+| `→`                | Focus file list                             |
+| `g`                | Go to first item                            |
+| `G`                | Go to last item                             |
+| `Alt + ←`          | History back                                |
+| `Alt + →`          | History forward                             |
+| `Ctrl + L`         | Edit path manually                          |
+| `Ctrl + Shift + C` | **Copy current folder path to clipboard**   |
 
 ### 🖼️ Views & Zoom
-| Shortcut | Action |
-|---|---|
-| `v` | **Toggle between List and Grid view** |
-| `Ctrl + +` | **Zoom In** |
-| `Ctrl + -` | **Zoom Out** |
-| `Ctrl + 0` | **Reset Zoom (100%)** |
+
+| Shortcut   | Action                                |
+| ---------- | ------------------------------------- |
+| `v`        | **Toggle between List and Grid view** |
+| `Ctrl + +` | **Zoom In**                           |
+| `Ctrl + -` | **Zoom Out**                          |
+| `Ctrl + 0` | **Reset Zoom (100%)**                 |
 
 ### 🛠️ File Operations (Action Bubble)
-| Shortcut | Action |
-|---|---|
-| `y` | Copy selected file (Yank) |
-| `x` | Cut selected file |
-| `p` | Paste file into current folder |
-| `e` | **Extract archive** (`.zip`, `.tar.*`, `.7z`, etc.) |
-| `z` | **Compress to ZIP** (selected file or folder) |
-| `d` | Move to trash |
-| `r` | Rename selected file |
-| `a` | Create new file |
-| `Shift + A` | Create new folder |
-| `o` | Open terminal in current folder |
+
+| Shortcut    | Action                                              |
+| ----------- | --------------------------------------------------- |
+| `y`         | Copy selected file (Yank)                           |
+| `x`         | Cut selected file                                   |
+| `p`         | Paste file into current folder                      |
+| `e`         | **Extract archive** (`.zip`, `.tar.*`, `.7z`, etc.) |
+| `z`         | **Compress to ZIP** (selected file or folder)       |
+| `d`         | Move to trash                                       |
+| `r`         | Rename selected file                                |
+| `a`         | Create new file                                     |
+| `Shift + A` | Create new folder                                   |
+| `o`         | Open terminal in current folder                     |
 
 ### 🔍 Panels & Settings
-| Shortcut | Action |
-|---|---|
-| `Ctrl + P` | **Open Command Palette** |
-| `Ctrl + ,` | **Open Settings** |
-| `Space` | **Toggle side preview pane** |
-| `F10` | **Toggle top navigation bar** |
-| `Ctrl + B` | **Toggle sidebar (collapse/expand)** |
-| `b` | **Show operations progress (when sidebar is collapsed)** |
-| `Ctrl + F` | Activate real-time search filter |
-| `Ctrl + H` | Toggle hidden files |
-| `Esc` | Cancel search / close dialogs / focus list |
+
+| Shortcut   | Action                                                   |
+| ---------- | -------------------------------------------------------- |
+| `Ctrl + P` | **Open Command Palette**                                 |
+| `Ctrl + ,` | **Open Settings**                                        |
+| `Space`    | **Toggle side preview pane**                             |
+| `F10`      | **Toggle top navigation bar**                            |
+| `Ctrl + B` | **Toggle sidebar (collapse/expand)**                     |
+| `b`        | **Show operations progress (when sidebar is collapsed)** |
+| `Ctrl + F` | Activate real-time search filter                         |
+| `Ctrl + H` | Toggle hidden files                                      |
+| `Esc`      | Cancel search / close dialogs / focus list               |
 
 ---
 
 ## 🚀 Building and Running
 
 ### Development Mode:
+
 ```bash
 cargo run
 ```
 
 ### Production Build (Optimized):
+
 ```bash
 cargo build --release
 ```
+
 The binary will be generated at `target/release/explor`.
