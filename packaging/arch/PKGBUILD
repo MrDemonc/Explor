@@ -1,0 +1,61 @@
+# Maintainer: MrDemonc
+pkgname=explor
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Modern, fast and customizable file manager for Linux"
+arch=('x86_64')
+url="https://github.com/MrDemonc/Explor"
+license=('GPL-3.0-or-later')
+depends=(
+    'gtk4'
+    'libadwaita'
+    'glib2'
+    'gdk-pixbuf2'
+)
+makedepends=(
+    'cargo'
+    'rust'
+    'librsvg'
+)
+provides=('explor')
+conflicts=('explor')
+options=(!strip)
+
+_get_project_root() {
+    cd "$startdir/../.." && pwd
+}
+
+build() {
+    local root
+    root="$(_get_project_root)"
+    cd "$root"
+    cargo build --release
+}
+
+package() {
+    local root
+    root="$(_get_project_root)"
+    cd "$root"
+
+    # 1. Binario ejecutable principal
+    install -Dm755 "target/release/explor" "$pkgdir/usr/bin/explor"
+
+    # 2. Lanzador de escritorio (.desktop)
+    install -Dm644 "assets/com.demonc.explor.desktop" "$pkgdir/usr/share/applications/com.demonc.explor.desktop"
+    ln -sf "com.demonc.explor.desktop" "$pkgdir/usr/share/applications/explor.desktop"
+
+    # 3. Iconos SVG vectoriales (hicolor y pixmaps)
+    install -Dm644 "assets/icons/com.demonc.explor.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/com.demonc.explor.svg"
+    install -Dm644 "assets/icons/com.demonc.explor.svg" "$pkgdir/usr/share/pixmaps/com.demonc.explor.svg"
+    ln -sf "com.demonc.explor.svg" "$pkgdir/usr/share/pixmaps/explor.svg"
+
+    # 4. Iconos PNG hicolor en resoluciones estándar
+    for size in 16 24 32 48 64 128 256 512; do
+        png_file="assets/icons/hicolor/${size}x${size}/apps/com.demonc.explor.png"
+        if [ ! -f "$png_file" ]; then
+            mkdir -p "assets/icons/hicolor/${size}x${size}/apps"
+            rsvg-convert -w "$size" -h "$size" "assets/icons/com.demonc.explor.svg" -o "$png_file"
+        fi
+        install -Dm644 "$png_file" "$pkgdir/usr/share/icons/hicolor/${size}x${size}/apps/com.demonc.explor.png"
+    done
+}
