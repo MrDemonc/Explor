@@ -6,7 +6,7 @@ Specially crafted for modern Wayland environments like **Hyprland** (Omarchy), S
 
 ---
 
-## ✨ Key Features
+## ✨ Key Feature
 
 - **📊 Non-Blocking Multi-Process Sidebar Progress Indicator**:
   - **Concurrent Multi-Task Support**: Run and track **multiple background operations at once** (e.g., extract a large archive while copying files or compressing folders). Each task features its own progress bar, percentage label, real-time speed metrics (MB/s), and independent cancel/dismiss buttons.
