@@ -472,6 +472,12 @@ button.editing-shortcut {
     box-shadow: 0 6px 20px alpha(black, 0.25);
 }
 
+.context-menu-popover arrow {
+    opacity: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
 .context-menu-box {
     padding: 2px;
     min-width: 175px;

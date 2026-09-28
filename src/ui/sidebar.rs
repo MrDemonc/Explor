@@ -213,7 +213,7 @@ impl Sidebar {
 
         let bookmark_popover = Popover::builder()
             .autohide(true)
-            .has_arrow(true)
+            .has_arrow(false)
             .child(&bookmark_menu_box)
             .css_classes(["menu", "context-menu-popover"])
             .build();

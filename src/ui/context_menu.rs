@@ -45,7 +45,7 @@ impl ContextMenu {
 
         let popover = Popover::builder()
             .autohide(true)
-            .has_arrow(true)
+            .has_arrow(false)
             .child(&container)
             .css_classes(["menu", "context-menu-popover"])
             .build();
