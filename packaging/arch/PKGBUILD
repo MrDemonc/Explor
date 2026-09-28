@@ -38,7 +38,7 @@ package() {
     cd "$root"
 
     # 1. Binario ejecutable principal
-    install -Dm755 "target/release/explor" "$pkgdir/usr/bin/explor"
+    install -Dm755 "target/release/explor" "$pkgdir/usr/local/bin/explor"
 
     # 2. Lanzador de escritorio (.desktop)
     install -Dm644 "assets/com.demonc.explor.desktop" "$pkgdir/usr/share/applications/com.demonc.explor.desktop"
