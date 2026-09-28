@@ -1,1 +1,0 @@
-build_arch_package.sh
